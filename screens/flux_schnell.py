@@ -109,12 +109,14 @@ def main():
     st.title("Flux Schnell Image Generation")
 
     # Prompt input
-    prompt = st.text_area(":orange[**Enter prompt**]", value="An astronaut riding a rainbow unicorn, cinematic, dramatic")
-    negative_prompt = st.text_area(":orange[**Elements to avoid in image**]", value="the absolute worst quality, distorted features")
-    resolution = st.selectbox("Resolution", ["256x256", "512x512", "1024x1024"])
+    prompt = st.text_area(":orange[**Enter prompt**]", value="high-resolution photograph, woman, UHD, photorealistic, shot on a Sony A7III --chaos 20 --ar 1:2 --style raw --stylize 250")
+
+    negative_prompt = st.text_area(":orange[**Elements to avoid in image**]", value="Exclude dark skies, urban elements, harsh colors, and chaotic scenes. Avoid jagged landscapes and overly dramatic contrasts.")
+    
+    resolution = st.selectbox("Resolution", ["256x256", "512x512", "1024x1024"], index=1)
     width, height = map(int, resolution.split("x"))
-    steps = st.slider("Steps", 1, 4, 1)  # Updated range
-    num_outputs = st.slider("Number of images", 1, 4, 1)  # Updated range
+    steps = st.slider("Steps", 1, 4, 4)  # Updated range
+    num_outputs = st.slider("Number of images", 1, 4, 2)  # Updated range
 
     # Generate button
     if st.button("Generate Image"):

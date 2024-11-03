@@ -11,7 +11,7 @@ logger = get_logger()
 
 # Load environment variables from .env file
 dotenv.load_dotenv()
-API_KEY = os.getenv("API_KEY") or st.secrets["API_KEY"]
+API_KEY = st.secrets["API_KEY"]
 
 # Validate the API key and initialize Together client
 try:

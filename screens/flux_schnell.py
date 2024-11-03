@@ -13,9 +13,11 @@ logger = get_logger()
 dotenv.load_dotenv()
 if not os.path.exists(".env"):
     API_KEY = st.secrets["API_KEY"]
+    logger.info("API_KEY loaded from Streamlit secrets.")
 else:
     API_KEY = os.getenv("API_KEY")
-    
+    logger.info("API_KEY loaded from environment variables.")
+
 # Validate the API key and initialize Together client
 try:
     if not API_KEY:

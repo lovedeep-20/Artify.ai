@@ -4,8 +4,6 @@ from together import Together
 import os
 import dotenv
 import sys
-# from logging_file import get_logger  # Import the logger from your custom logging configuration
-# sys.path.append(r'C:/Users/saini/Desktop/Project/Application/Source Code/imgen API/logger')
 from logger.logging_file import get_logger
 
 # Initialize the logger

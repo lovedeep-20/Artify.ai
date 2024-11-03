@@ -1,0 +1,6 @@
+streamlit
+streamlit-option-menu
+together
+requests
+python-dotenv
+colorlog
